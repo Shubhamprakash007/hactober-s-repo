@@ -1,33 +1,24 @@
-
-#include <stdio.h>
-int insert(int [],int ,int ,int );
-int main()
-{
-	int arr[20];
-	int i, key, pos, n;
-	printf("enter no of elements ");
-	scanf("%d",&n);
-	printf("enter elements ");
-	for(i=0;i<n;i++){
-		scanf("%d",&arr[i]);	
-	}
-	printf("\n The element you want to insert");
-    scanf("%d",&key);
-    printf("\n position where you want to insert :");
-    scanf("%d",&pos);
-	insert(arr,pos,n,key);
-	for (i = 0; i <=n; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
-	}
-	
-int insert(int arr[],int pos,int n,int key){
-	n++;
-	for (int i = n-1; i >= pos; i--)
-		arr[i] = arr[i - 1];
-
-	arr[pos - 1] = key;
-	return 0;
+#include<stdio.h>
+int main(){
+   int student[40],pos,i,size,value;
+   printf("enter no of elements in array of students:");
+   scanf("%d",&size);
+   printf("enter %d elements are:\n",size);
+   for(i=0;i<size;i++)
+   {
+      scanf("%d",&student[i]);
+   }
+   printf("enter the position where you want to insert the element:\n");
+   scanf("%d",&pos);
+   printf("enter the value into that poition:\n");
+   scanf("%d",&value);
+   for(i=size-1;i>=pos-1;i--)
+      student[i+1]=student[i];
+   student[pos-1]= value;
+   printf("final array after inserting the value is\n");
+   for(i=0;i<=size;i++)
+      printf("%d\n",student[i]);
+   return 0;
 }
 	
 
