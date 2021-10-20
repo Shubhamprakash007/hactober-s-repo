@@ -2,15 +2,15 @@
 int delet(int [],int ,int );
 int main()
 {
-   int array[10], position, i, n;
+   int array[10], p, i, n;
    printf("Enter number of elements in array\n");
    scanf("%d", &n);
    printf("Enter %d elements\n", n);
    for (i = 0; i < n; i++)
       scanf("%d", &array[i]);
    printf("Enter the location where you wish to delete element\n");
-   scanf("%d", &position);
-   int x=delet(array,position,n);
+   scanf("%d", &p);
+   int x=delet(array,p,n);//finding the deletion to be done
     
      if (x==0)
       printf("Deletion not possible.\n");
