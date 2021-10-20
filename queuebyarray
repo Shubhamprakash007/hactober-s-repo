@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct queue{
+    int size;
+    int f;
+    int r;
+    int *arr;
+};
+int isFull(struct queue *s){
+    if(s->r==s->size-1){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+int isEmpty(struct queue *s){
+    if(s->r==s->f){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void enqueue( struct queue *s ,int value){
+   if(isFull(s)){
+       printf("queue overflow");
+   } else {
+       s->r++;
+       s->arr[s->r]=value;
+   }
+}
+int dequeue( struct queue *s){
+    int a=-1;
+   if(isEmpty(s)){
+       printf("queue is empty");
+   } else {
+       s->f++;
+       a= s->arr[s->f];
+   }
+    return a;
+}
+
+int main(){
+    struct queue *q;
+    q->size=4;
+    q->f=-1;
+    q->r=-1;
+    q->arr = (int *)malloc(q->size * sizeof(int));
+    enqueue(q,56);
+    enqueue(q,6);
+    enqueue(q,60);
+   printf("%d\n", dequeue(q));
+   printf("%d\n", dequeue(q));
+    dequeue(q);
+    return 0;
+}
