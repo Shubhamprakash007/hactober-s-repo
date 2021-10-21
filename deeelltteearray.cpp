@@ -8,7 +8,7 @@ int main()
    printf("Enter %d elements\n", n);
    for (i = 0; i < n; i++)
       scanf("%d", &array[i]);
-   printf("Enter the location where you wish to delete element\n");
+   printf("Enter the index where you wish to delete element\n");
    scanf("%d", &p);
    int x=delet(array,p,n);//finding the deletion to be done
     
