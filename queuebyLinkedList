@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+ 
+    struct Node * f=NULL;
+   struct Node * r=NULL;
+
+struct Node{
+    int data;
+    struct Node * next;
+};
+
+ void linkedListTraversal(struct Node *ptr){
+     printf("printing the value in linked list:\n");
+      while(ptr!= NULL){
+          printf("Element :%d\n",ptr->data);
+          ptr = ptr->next;
+      }
+  }
+
+ void enqueu(int val){
+    struct Node *n=(struct Node *)malloc (sizeof(struct Node));
+    if(n==NULL){
+        printf("queue is Full");
+    } else {
+        n->data=val;
+        n->next=NULL;
+        if(f==NULL){
+            f=r=n;
+        } else {
+            r->next=n;
+            r=n;
+        }
+    }
+ }
+
+  int dequeue(){
+    int val=-1;
+    struct Node  *ptr;  
+    if(f==NULL){
+        printf("queue is empty");
+    } else {
+        f = f->next;
+        val = ptr->data;
+        free(ptr);
+    } 
+    return val;
+ }
+int main(){
+   
+   printf("elemnt  deuque : %d\n",dequeue());
+   enqueu(45);
+   enqueu(5);
+   enqueu(59);
+   enqueu(50);
+   enqueu(80);
+   printf("elemnt  deuque : %d\n",dequeue());
+   printf("elemnt  deuque : %d\n",dequeue());
+   printf("elemnt  deuque : %d\n",dequeue());
+   linkedListTraversal(f);
+
+   return 0;
+}
